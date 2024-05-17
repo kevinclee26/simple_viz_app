@@ -7,6 +7,6 @@ conn=engine.connect()
 df=pd.read_csv('data/source.csv')
 # https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.to_sql.html
 # creates schema and inserts records
-df.to_sql('data_table', con=conn)
+df.to_sql('data_table', if_exists='replace', con=conn)
 
 conn.close()
